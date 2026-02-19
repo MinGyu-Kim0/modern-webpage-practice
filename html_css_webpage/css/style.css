@@ -8,6 +8,7 @@ body {
   font-family: "spoqa Han Sans Neo", "Sans-serif";
 }
 
+/* a 링크 태그 스타일 초기화 */
 a {
   all: unset;
 }
@@ -32,9 +33,10 @@ a:hover {
   color: #4f464d;
 }
 .inner {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
+  width: 100%; /* 가로 사이즈가 1200px 넘는 해상도에서는 max-width 설정 */
+  height: 100%; /* align-items 등으로 수직 가운데 정렬을 위해, 알맞은 height 설정이 필요함 */
+  margin: 0 auto; /* 가운데 정렬: 동일 요소에 width 가 설정되어 있을 때에만 적용 */
+  padding: 2rem;
 }
 
 header {
@@ -54,8 +56,14 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-
+/* 필요시 세부 설정을 위해, 상단 좌측 브랜드만을 별도로 클래스로 정의 */
 .head-container .head-brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* 필요시 세부 설정을 위해, 상단 우측 메뉴만을 별도로 클래스로 정의 */
+.head-container .head-blog {
   font-weight: bold;
   font-size: 1.2rem;
 }
@@ -65,11 +73,48 @@ header {
   cursor: pointer;
 }
 
-.head-container .head-blog {
-  font-weight: bold;
-  font-size: 1.2rem;
+section {
+  width: 100%;
+  background-color: #ffffff;
+  position: relative;
 }
 
+.main {
+  height: 360px;
+  background-image: url("../img/back-view-kids-writing-board.jpg");
+  background-size: cover;
+  background-position: center 50%;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(47, 48, 89);
+  opacity: 0.8;
+  z-index: 2;
+  margin-top: 60px;
+}
+
+.title-container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.8rem;
+  line-height: 2rem;
+}
+
+.message {
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: #fff;
+}
 @media only screen and (min-width: 1200px) {
   .inner {
     max-width: 1200px;
